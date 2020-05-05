@@ -9,12 +9,12 @@ pip install -r requirements.txt
 
 ### Running
 ```
- python DataRunner.py -u <username> -p <password> --action "check" 
+ python ReplyBot.py -u <username> -p <password> --action "check" 
 ```
 **Note:** the client and router must have the same time to make this script work.
 
 ### Usage
-Give username and password through cli arguments or set them in the config.ini
+Set username and password in 'config.ini' file or give them through the cli.
 
 | Argument         | Value                | Description                     |
 | :-----------     | -------------        | --------------------------------|
