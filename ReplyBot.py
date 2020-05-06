@@ -34,7 +34,7 @@ class ReplyBot(Router):
         recipient = self.config['reply-msg']['recipient']
         content = self.config['reply-msg']['content']
         self.send_msg(recipient, content)
-        # poll inbox to be sure that we added one gb
+        # poll inbox for success message
         success = False
         for i in range(20):
             msg = self.get_latest_msg("inbox")
