@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from time import sleep
 import argparse
 import configparser
-
+from random import randrange
 
 class ReplyBot(Router):
 
@@ -72,14 +72,15 @@ class ReplyBot(Router):
     def random(self):
         received = self.check()
         if received:
-            from random import randrange
-            from time import sleep
+            self.clean()
             count = randrange(2, 5)
             self.log("Sending {} messages...".format(count))
             for i in range(count):
                 self.send()
                 wait = randrange(15, 45)
                 self.log("Pausing for " + str(wait) + " seconds...")
+                if i == count-1:
+                    break
                 sleep(wait)
             self.clean()
 
